@@ -13,26 +13,9 @@
 
     <input type="text" id="senha" placeholder="..." />
     <br><br>
-    <button onclick="verificar()">Entrar</button>
+    <button onclick="verificarSenha()">Entrar</button>
 
     <p id="erro" style="color: #ff4d6d;"></p>
   </div>
 
-  <script>
-    function verificar() {
-      let entrada = document.getElementById("senha").value;
-
-      // normaliza (resolve maiúsculas e espaços)
-      entrada = entrada.trim().toLowerCase().replace(/\s+/g, " ");
-
-      if (entrada === "a cabana") {
-        // redireciona pro site principal
-        window.location.href = "inicio.html";
-      } else {
-        document.getElementById("erro").innerText = "Senha incorreta...";
-      }
-    }
-  </script>
-
-</body>
-</html>
+  <script src="script.js"></script>
