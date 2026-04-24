@@ -1,6 +1,3 @@
-// ========================
-// 🔐 VERIFICAR SENHA
-// ========================
 function verificarSenha() {
   let entrada = document.getElementById("senha").value;
 
@@ -15,9 +12,6 @@ function verificarSenha() {
   }
 }
 
-// ========================
-// 🌐 NAVEGAÇÃO
-// ========================
 function ir(pagina) {
   window.location.href = pagina;
 }
