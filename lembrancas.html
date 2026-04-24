@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>O que eu lembro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <p id="texto"></p>
+  </div>
+
+  <script>
+    const frases = [
+      "Eu não sei se você lembra...",
+      "Mas eu lembro de algumas coisas",
+      "Mesmo que pareçam pequenas",
+      "Elas ficaram comigo de um jeito estranho",
+      "E mesmo depois de tanto tempo...",
+      "eu ainda lembro"
+    ];
+
+    let i = 0;
+    let j = 0;
+
+    function escrever() {
+      if (i < frases.length) {
+        if (j < frases[i].length) {
+          document.getElementById("texto").innerHTML += frases[i].charAt(j);
+          j++;
+          setTimeout(escrever, 40);
+        } else {
+          document.getElementById("texto").innerHTML += "<br><br>";
+          i++;
+          j = 0;
+          setTimeout(escrever, 800);
+        }
+      }
+    }
+
+    escrever();
+  </script>
+
+</body>
+</html>

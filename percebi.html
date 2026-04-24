@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>O que eu percebi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <p id="texto"></p>
+  </div>
+
+  <script>
+    const frases = [
+      "Com o tempo eu fui percebendo umas coisas",
+      "Não foi de uma vez",
+      "Nem algo que eu parei pra pensar",
+      "Só... foi acontecendo",
+      "Você tem um jeito",
+      "Que não é fácil de explicar",
+      "Mas também não dá pra ignorar"
+    ];
+
+    let i = 0;
+    let j = 0;
+
+    function escrever() {
+      if (i < frases.length) {
+        if (j < frases[i].length) {
+          document.getElementById("texto").innerHTML += frases[i].charAt(j);
+          j++;
+          setTimeout(escrever, 40);
+        } else {
+          document.getElementById("texto").innerHTML += "<br><br>";
+          i++;
+          j = 0;
+          setTimeout(escrever, 800);
+        }
+      }
+    }
+
+    escrever();
+  </script>
+
+</body>
+</html>

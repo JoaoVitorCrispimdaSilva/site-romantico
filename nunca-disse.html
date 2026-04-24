@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>O que eu nunca disse</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <p id="texto"></p>
+  </div>
+
+  <script>
+    const frases = [
+      "Talvez eu devesse ter falado antes...",
+      "Mas eu não falei",
+      "E o tempo passou",
+      "E mesmo assim...",
+      "isso não passou",
+      "",
+      "Eu nem sei explicar direito quando começou",
+      "Foi meio... incompreensível",
+      "Só sei que aconteceu",
+      "",
+      "Acho que começou quando eu comecei a notar suas virtudes",
+      "Coisas que talvez muita gente não repare",
+      "Mas que fizeram diferença pra mim",
+      "",
+      "E quando eu percebi...",
+      "já era algo que eu não conseguia ignorar",
+      "",
+      "Então dessa vez eu não vou deixar passar",
+      "",
+      "Eu gosto de você"
+    ];
+
+    let i = 0;
+    let j = 0;
+
+    function escrever() {
+      if (i < frases.length) {
+        if (j < frases[i].length) {
+          document.getElementById("texto").innerHTML += frases[i].charAt(j);
+          j++;
+          setTimeout(escrever, 40);
+        } else {
+          document.getElementById("texto").innerHTML += "<br><br>";
+          i++;
+          j = 0;
+          setTimeout(escrever, 900);
+        }
+      } else {
+        setTimeout(mostrarBotao, 1000);
+      }
+    }
+
+    function mostrarBotao() {
+      const btn = document.createElement("button");
+      btn.innerText = "Se quiser falar comigo...";
+      btn.onclick = () => {
+        window.location.href = "https://wa.me/SEUNUMERO";
+      };
+      document.body.appendChild(btn);
+    }
+
+    escrever();
+  </script>
+
+</body>
+</html>
