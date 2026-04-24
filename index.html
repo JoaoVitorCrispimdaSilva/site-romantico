@@ -22,10 +22,11 @@
     function verificar() {
       let entrada = document.getElementById("senha").value;
 
-      // normaliza: tira espaços extras e ignora maiúsculas/minúsculas
-      entrada = entrada.trim().toLowerCase();
+      // normaliza (resolve maiúsculas e espaços)
+      entrada = entrada.trim().toLowerCase().replace(/\s+/g, " ");
 
       if (entrada === "a cabana") {
+        // redireciona pro site principal
         window.location.href = "inicio.html";
       } else {
         document.getElementById("erro").innerText = "Senha incorreta...";
